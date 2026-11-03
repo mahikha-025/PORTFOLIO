@@ -29,3 +29,40 @@ if (portrait && portraitFrame) {
   portrait.addEventListener("error", showPlaceholder);
   if (portrait.complete && portrait.naturalWidth > 0) showPortrait();
 }
+
+const achievementGallery = document.querySelector(".achievement-gallery");
+const achievementLightbox = document.querySelector(".achievement-lightbox");
+
+if (achievementGallery && achievementLightbox) {
+  const photos = Array.from(achievementGallery.querySelectorAll(".achievement-photo"));
+  const lightboxImage = achievementLightbox.querySelector(".achievement-lightbox-image");
+  let activePhotoIndex = 0;
+
+  const showPhoto = (index) => {
+    activePhotoIndex = (index + photos.length) % photos.length;
+    const image = photos[activePhotoIndex].querySelector("img");
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+
+    if (!achievementLightbox.open) achievementLightbox.showModal();
+  };
+
+  achievementGallery.addEventListener("click", (event) => {
+    const photo = event.target.closest(".achievement-photo");
+    if (photo) showPhoto(photos.indexOf(photo));
+  });
+
+  achievementLightbox.querySelector("[data-lightbox-close]").addEventListener("click", () => {
+    achievementLightbox.close();
+  });
+  achievementLightbox.querySelector("[data-lightbox-previous]").addEventListener("click", () => {
+    showPhoto(activePhotoIndex - 1);
+  });
+  achievementLightbox.querySelector("[data-lightbox-next]").addEventListener("click", () => {
+    showPhoto(activePhotoIndex + 1);
+  });
+  achievementLightbox.addEventListener("click", (event) => {
+    if (event.target === achievementLightbox) achievementLightbox.close();
+  });
+}

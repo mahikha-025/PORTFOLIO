@@ -244,6 +244,32 @@ h1, h2, h3, p { margin-top: 0; }
   .footer-inner > span { order: 4; width: 100%; }
   .back-to-top { margin-left: auto; }
 }
+
+.recognition-subtitle { margin: 18px 0 0; color: var(--muted); font-size: 12px; }
+.achievement-gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px 16px; margin-top: 40px; }
+.achievement-gallery-card { min-width: 0; }
+.achievement-photo { display: block; width: 100%; padding: 8px; overflow: hidden; border: 1px solid var(--line); background: var(--paper); cursor: zoom-in; }
+.achievement-photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .25s ease; }
+.achievement-photo:hover img { transform: scale(1.025); }
+.achievement-gallery-link { margin-top: 32px; }
+.achievement-gallery-link[hidden] { display: none; }
+.achievement-lightbox { width: min(920px, calc(100% - 32px)); max-width: none; max-height: 92vh; padding: 20px; overflow: auto; border: 1px solid var(--line); background: var(--paper); color: var(--ink); }
+.achievement-lightbox::backdrop { background: rgba(41, 35, 42, .78); }
+.achievement-lightbox-toolbar { display: flex; justify-content: flex-end; }
+.achievement-lightbox button { padding: 8px 12px; border: 1px solid var(--line); background: var(--ivory); color: var(--ink); font: 500 11px var(--sans); cursor: pointer; }
+.achievement-lightbox-toolbar button span { margin-left: 5px; color: var(--burgundy); font-size: 16px; }
+.achievement-lightbox figure { margin: 10px 0; text-align: center; }
+.achievement-lightbox-image { display: block; width: auto; max-width: 100%; height: auto; max-height: 68vh; margin: 0 auto; object-fit: contain; }
+.achievement-lightbox-controls { display: flex; justify-content: space-between; gap: 12px; }
+
+@media (max-width: 980px) {
+  .achievement-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .achievement-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
+  .achievement-lightbox { padding: 14px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
