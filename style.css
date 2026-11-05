@@ -132,8 +132,8 @@ h1, h2, h3, p { margin-top: 0; }
 .chart-lines i:nth-child(4) { height: 75%; }
 .chart-lines i:nth-child(5) { height: 95%; }
 .project-content { padding: 27px 28px 30px; }
-.project-content .eyebrow { margin-bottom: 12px; font-size: 8px; }
-.project-content h3 { margin-bottom: 12px; font: 500 26px/1.25 var(--serif); }
+#projects .project-content .eyebrow { margin-bottom: 12px; color: var(--burgundy); font-size: 8px; }
+#projects .project-content h3 { margin-bottom: 12px; color: var(--ink); font: 500 26px/1.25 var(--serif); }
 .project-content > p:not(.eyebrow) { min-height: 66px; margin-bottom: 20px; color: var(--ink); font-size: 11px; line-height: 1.8; }
 .project-content .tag-list { min-height: 54px; margin-bottom: 21px; align-content: start; }
 .project-note { margin: 18px 0 0; color: var(--muted); font-size: 9px; }
