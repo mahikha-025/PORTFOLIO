@@ -158,6 +158,8 @@ h1, h2, h3, p { margin-top: 0; }
 .achievement-item h3 { margin: 0 0 4px; font: 500 19px/1.4 var(--serif); }
 .achievement-item p { margin: 0; color: var(--muted); font-size: 11px; }
 .achievement-mark { color: var(--muted); font-size: 7px; letter-spacing: .14em; }
+.achievement-book { display: flex; align-items: center; gap: 16px; }
+.achievement-book-cover { display: block; width: 58px; height: auto; border: 1px solid var(--line); }
 .interests { display: grid; grid-template-columns: 160px 1fr; gap: 20px; margin-top: 50px; padding-top: 25px; border-top: 1px solid var(--line); }
 .interests .eyebrow { margin: 0; }
 .interests p:last-child { margin: 0; color: var(--ink); font: 500 16px/1.9 var(--serif); }
